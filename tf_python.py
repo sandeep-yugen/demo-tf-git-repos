@@ -1,3 +1,5 @@
+
+from tf_module import print_to_console
 import pandas as pd
 from pyspark.sql import SparkSession
 from pyspark.sql.types import (
@@ -5,7 +7,6 @@ from pyspark.sql.types import (
     StructField,
     IntegerType
 )
-
 spark = SparkSession.builder.appName("PysparkOnKubernetes").getOrCreate()
 
 schema = StructType([
@@ -16,6 +17,7 @@ schema = StructType([
 # Generate random data
 data = [(i, i * 2) for i in range(10)]
 
+print_to_console()
 # Create DataFrame from random data
 df = spark.createDataFrame(data, schema)
 df = df.coalesce(1)
