@@ -1,4 +1,5 @@
-
+import sys
+sys.path.append(f"/Workspace/Shared/demo-tf-git-repos/")
 from tf_module import print_to_console
 import pandas as pd
 from pyspark.sql import SparkSession
